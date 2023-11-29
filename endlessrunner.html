@@ -1,17 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>Endless Runner</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
+
 <body>
     <div id="game">
+
         <div id="score">SCORE: 0</div>
         <div id="chicken"></div>
         <div id="obstacleCeiling"></div>
         <div id="obstacleFloor"></div>
+        <div id="gameOverMessage" style="display: none; color: red; font-size: 24px;">Game Over</div>
     </div>
+
     <script src="endlessrunner.js"></script>
     <style type="text/css">
         body {
@@ -25,17 +30,24 @@
         }
 
         #game {
-            width: 720px; /* Increased width to include the border */
-            height: 270px; /* Increased height to include the border */
-            background: navy;
+            width: 720px;
+            /* Increased width to include the border */
+            height: 270px;
+            /* Increased height to include the border */
+            background: url('space.jpeg');
+            /* Use rock image or change background to your rock shape */
+            background-size: cover;
             position: relative;
-            border: 5px solid white; /* Adjusted border size and color as needed */
+            border: 5px solid white;
+            /* Adjusted border size and color as needed */
         }
 
         #score {
             color: white;
             font-size: 20px;
             position: absolute;
+            background: url('space.png');
+            background-size: cover;
             top: 10px;
             left: 10px;
         }
@@ -43,7 +55,10 @@
         #chicken {
             width: 60px;
             height: 60px;
-            background: red;
+            background: transparent;
+            background: url('ship.jpg') center center no-repeat;
+            /* Use rock image or change background to your rock shape */
+            background-size: cover;
             position: relative;
             top: 190px;
             left: 100px;
@@ -55,9 +70,17 @@
             height: 50px;
             background: green;
             position: absolute;
-            left: 200%; /* Adjusted initial position for the ceiling obstacle */
-            animation: blockCeiling 1s infinite linear; /* Slower animation speed */
-            top: 50px; /* Adjusted top position for the ceiling obstacle */
+            left: 200%;
+            /* Adjusted initial position for the ceiling obstacle */
+            animation: blockCeiling 1s infinite linear;
+            /* Slower animation speed */
+            top: 50px;
+            /* Adjusted top position for the ceiling obstacle */
+            background: url('asteroid.png') center center no-repeat;
+            /* Use rock image or change background to your rock shape */
+            background-size: cover;
+
+
         }
 
         #obstacleFloor {
@@ -65,9 +88,15 @@
             height: 50px;
             background: green;
             position: absolute;
-            left: 100%; /* Adjusted initial position for the floor obstacle */
-            animation: blockFloor 2s infinite linear; /* Slower animation speed */
-            top: 200px; /* Adjusted top position for the floor obstacle */ 
+            left: 100%;
+            /* Adjusted initial position for the floor obstacle */
+            animation: blockFloor 2s infinite linear;
+            /* Slower animation speed */
+            top: 200px;
+            /* Adjusted top position for the floor obstacle */
+            background: url('asteroid.png') center center no-repeat;
+            /* Use rock image or change background to your rock shape */
+            background-size: cover;
         }
 
         @keyframes blockCeiling {
@@ -91,4 +120,5 @@
         }
     </style>
 </body>
+
 </html>
