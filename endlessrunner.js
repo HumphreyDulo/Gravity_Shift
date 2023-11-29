@@ -1,6 +1,7 @@
 var chicken = document.getElementById('chicken');
 var obstacleCeiling = document.getElementById('obstacleCeiling');
 var obstacleFloor = document.getElementById('obstacleFloor');
+var scoreElement = document.getElementById('score');
 var counter = 0;
 var isOnCeiling = false;
 
@@ -36,10 +37,21 @@ var lose = setInterval(function () {
         obstacleCeiling.style.display = "none";
         obstacleFloor.style.animation = "none";
         obstacleFloor.style.display = "none";
-        alert("SCORE = " + counter);
+        scoreElement.textContent = "SCORE: " + counter;
         counter = 0;
         clearInterval(lose);
     }
+
+    // Check if obstacles are outside the visible area and reset their position
+    if (obstacleCeilingLeft + 50 < 0) {
+        obstacleCeiling.style.left = "100%"; // Adjusted to reset on the right side of the visible area
+    }
+    
+    if (obstacleFloorLeft + 50 < 0) {
+        obstacleFloor.style.left = "100%"; // Adjusted to reset on the right side of the visible area
+    }
+
+    scoreElement.textContent = "SCORE: " + counter;
 }, 10);
 
 document.addEventListener("keydown", function (event) {
